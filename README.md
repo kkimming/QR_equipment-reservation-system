@@ -370,7 +370,7 @@ docker-compose down
 
 **GitHub**
 
-[QR Equipment Reservation System](https://github.com/kkimming/qr-equipment-system)
+
 
 ---
 
