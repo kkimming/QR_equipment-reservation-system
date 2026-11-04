@@ -150,90 +150,7 @@ flowchart TD
 
 ---
 
-## 💡 5. 주요 트러블슈팅 (Troubleshooting)
-
-### 5-1. 모바일 레이아웃 및 뷰포트 최적화
-
-**문제**
-
-- 초기 데스크톱 중심 레이아웃으로 인해 모바일 화면에서 QR 스캔 영역이 깨지는 현상 발생
-
-**해결**
-
-- Mobile-First 디자인 규칙 적용
-- QR 스캔 영역을 1:1 비율로 재설계
-- 화면 크기에 따른 반응형 레이아웃 적용
-
-**결과**
-
-- 다양한 모바일 기기에서 안정적인 QR 스캔 UI 구현
-
-### 5-2. JPA 외래키 타입 불일치
-
-**문제**
-
-- `rentals` 테이블 생성 과정에서 기본키(PK)의 `BIGINT`와 외래키(FK)의 `INTEGER` 타입이 일치하지 않아 데이터베이스 오류 발생
-
-**해결**
-
-- 엔티티 및 데이터베이스 스키마의 ID 타입 확인
-- PK와 FK의 데이터 타입을 `BIGINT`로 통일
-
-**결과**
-
-- 외래키 제약조건 정상 적용 및 테이블 간 관계 설정 완료
-
-### 5-3. JWT 권한 인가 오류 (403 Forbidden)
-
-**문제**
-
-- 관리자 API 호출 시 인증은 정상적으로 수행되지만 권한 인가 과정에서 `403 Forbidden` 오류 발생
-
-**해결**
-
-- JWT 생성 시 사용자 권한 정보 확인
-- Spring Security의 권한 규칙에 맞게 `ROLE_` 접두사 적용
-- `ROLE_ADMIN` 기반 접근 제어 설정 수정
-
-**결과**
-
-- 관리자 권한 검증 및 관리자 전용 API 접근 정상화
-
-### 5-4. 모바일 카메라 HTTPS 접근 문제
-
-**문제**
-
-- 모바일 브라우저에서 카메라 기능을 사용하기 위해 HTTPS 보안 환경 필요
-
-**해결**
-
-- AWS EC2에 Nginx Reverse Proxy 구성
-- Let's Encrypt 기반 SSL 인증서 발급
-- Certbot을 통한 HTTPS 적용 및 인증서 갱신 환경 구성
-
-**결과**
-
-- HTTPS 환경에서 모바일 카메라 접근 및 QR 코드 스캔 기능 구현
-
-### 5-5. 데이터베이스 타임존 불일치
-
-**문제**
-
-- Docker 컨테이너의 기본 UTC 설정으로 대여 및 반납 시간에 시차 발생
-
-**해결**
-
-- Dockerfile에 `TZ=Asia/Seoul` 환경변수 설정
-- 애플리케이션과 데이터베이스의 시간 처리 기준 통일
-- 날짜 및 시간 데이터 저장과 조회 기준 점검
-
-**결과**
-
-- 한국 표준시(KST)를 기준으로 대여 및 반납 이력 관리
-
----
-
-## 📁 6. 프로젝트 디렉토리 구조 (Directory Structure)
+## 📁 5. 프로젝트 디렉토리 구조 (Directory Structure)
 
 ```text
 QR_equipment-reservation-system/
@@ -276,9 +193,9 @@ QR_equipment-reservation-system/
 
 ---
 
-## ⚙️ 7. 실행 방법 (Getting Started)
+## ⚙️ 6. 실행 방법 (Getting Started)
 
-### 7-1. 사전 요구사항
+### 6-1. 사전 요구사항
 
 프로젝트 실행을 위해 다음 환경이 필요합니다.
 
@@ -287,7 +204,7 @@ QR_equipment-reservation-system/
 - PostgreSQL
 - Docker 및 Docker Compose
 
-### 7-2. 저장소 클론
+### 6-2. 저장소 클론
 
 ```bash
 git clone https://github.com/kkimming/qr-equipment-system.git
@@ -295,7 +212,7 @@ git clone https://github.com/kkimming/qr-equipment-system.git
 cd qr-equipment-system
 ```
 
-### 7-3. 백엔드 실행 (Spring Boot)
+### 6-3. 백엔드 실행 (Spring Boot)
 
 ```bash
 cd backend
@@ -303,7 +220,7 @@ cd backend
 ./gradlew bootRun
 ```
 
-### 7-4. 프론트엔드 실행 (React)
+### 6-4. 프론트엔드 실행 (React)
 
 새 터미널을 열고 다음 명령어를 실행합니다.
 
@@ -315,7 +232,7 @@ npm install
 npm run dev
 ```
 
-### 7-5. Docker Compose 실행
+### 6-5. Docker Compose 실행
 
 프로젝트 루트 디렉토리에서 실행합니다.
 
@@ -343,7 +260,7 @@ docker-compose down
 
 ---
 
-## 🔐 8. 보안 및 운영 (Security & Operations)
+## 🔐 7. 보안 및 운영 (Security & Operations)
 
 - JWT 기반 사용자 인증 및 권한별 API 접근 제어
 - HTTPS를 통한 클라이언트와 서버 간 통신 암호화
@@ -354,7 +271,7 @@ docker-compose down
 
 ---
 
-## 📈 9. 프로젝트 기대 효과 (Expected Outcomes)
+## 📈 8. 프로젝트 기대 효과 (Expected Outcomes)
 
 | 구분 | 기대 효과 |
 |---|---|
@@ -366,7 +283,7 @@ docker-compose down
 
 ---
 
-## 🔗 10. 프로젝트 저장소 (Repository)
+## 🔗 9. 프로젝트 저장소 (Repository)
 
 **GitHub**
 
